@@ -167,8 +167,8 @@ footer .media li { margin-left:1rem }
 
 
 /* aida */
-article { margin:8rem auto 3rem; background:rgba(88,124,188,.3); padding:3rem; word-break: keep-all; line-height:2 } 
-article h1 { font-family:'Libre Baskerville', serif; -webkit-text-stroke: 1px rgba(255,255,255,.5); color:transparent; font-size: 10vw !important; line-height: 1.5 } 
+article { margin:8rem auto 3rem; background:rgba(255,255,255,.1); padding:3rem; word-break: keep-all; line-height:2 } 
+article h1 { text-align:center; font-family:'Libre Baskerville', serif; -webkit-text-stroke: 1px rgba(255,255,255,.5); color:transparent; font-size: 10vw !important; line-height: 1.5 } 
 article .table { width:100%; margin:1rem auto; border-top:1px solid rgba(255,255,255,.5); border-bottom:1px solid rgba(255,255,255,.5); } 
 article .table .th, article .table .th span { color:var(--color-babypink) } 
 article .table .row { display:flex; border-bottom:1px solid rgba(255,255,255,.5); align-items: center; padding:1rem } 
