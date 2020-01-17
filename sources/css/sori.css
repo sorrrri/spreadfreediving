@@ -94,13 +94,13 @@ section.terms .slick-dots { bottom:6rem; left:-8rem; width:auto; transform: rota
 section.terms .slick-dots li.slick-active button:before { color:white; transform:scale(1.5) } 
 
 section.terms dl { opacity:.3; height:40vh; background:white; background-size:cover; text-align:center; padding:2rem 1rem; margin:.5rem; border-radius:.5rem; display: flex; flex-direction: column; justify-content: center; transition: opacity .4s; } 
+section.terms dl:nth-child(odd) { background:url(https://source.unsplash.com/featured/?underwater/1) }
+section.terms dl:nth-child(even) { background:url(https://source.unsplash.com/featured/?underwater/2) }
+
 section.terms dl small { color:var(--color-coral); font-family:"Poppins" } 
 section.terms dl dt:first-of-type { font-size: 1.5rem; text-transform: uppercase; font-family:'Libre Baskerville'; color:var(--color-navy) } 
 section.terms dl dt:last-of-type { font-size:1.5rem; color:var(--color-blue); font-weight:bold; padding-top:10rem; margin-bottom:1rem; background-position: center; background-repeat: no-repeat; background-size:64px 64px } 
 section.terms dl dd { color:slategray; margin:0; padding:0 } 
-
-section.terms dl { background:url(https://source.unsplash.com/featured/?underwater/1) }
-section.terms dl:nth-child(even) { background:url(https://source.unsplash.com/featured/?underwater/2) }
 
 section.terms .slick-current { opacity:1; background:white !important; background-image:none !important } 
 section.terms .slick-current > * {opacity: 0; animation: moveSmallUp 1s forwards}
@@ -108,8 +108,6 @@ section.terms .slick-current dt:first-of-type {animation-delay: .1s}
 section.terms .slick-current small {animation-delay: .3s; display:block}
 section.terms .slick-current dt:last-of-type {animation-delay: .5s}
 section.terms .slick-current dd {animation-delay: .7s}
-
-
 
 section.terms .sta dt:last-of-type { background-image:url(../images/ico/sta.png) } 
 section.terms .dyn dt:last-of-type { background-image:url(../images/ico/dyn.png) } 
@@ -147,10 +145,8 @@ section.experience button:hover ion-icon { transform: translateX(10px) }
 
 /* team */
 section.team { position: relative; background-image: linear-gradient(rgba(30,63,132,1),rgba(3, 23, 65,1))} 
-
 section.team h2, section.team h3 { text-align:left; margin-bottom:1rem } 
 section.team h3 { color:coral; margin-bottom:3rem } 
-
 section.team .container { width:90%; } 
 section.team .container div { position:relative; padding:6rem; display:flex; justify-content: center; flex-direction: column; flex:1 1 auto; height:70vh; background-size:cover; background-repeat: no-repeat; background-position: center } 
 section.team .container div::before { content:''; position:absolute; top:0; left:0; right:0; bottom:0; background-color:rgba(0,0,0,.3); } 
