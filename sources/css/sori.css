@@ -1,7 +1,7 @@
-:root { --color-coral : #E87C70; --color-bluegreen : #2E5A79; --color-navy : rgb(6, 17, 39); --color-blue : #587CBC; --color-lavender : #D5C1E8; --color-babypink : #EFD7EC; } 
+:root { --color-coral : #E87C70; --color-bluegreen : #2E5A79; --color-navy : #1E3F84; --color-blue : #587CBC; --color-lavender : #D5C1E8; --color-babypink : #EFD7EC; } 
 
 html,
-body { overflow-x:hidden; font-family: 'NanumSquare', sans-serif; margin: 0; padding: 0; box-sizing: border-box; background-color:rgba(30,63,132,1); transition: background-color .4s } 
+body { word-break:keep-all; overflow-x:hidden; font: 17px/1.2 'NanumSquare', sans-serif; margin: 0; padding: 0; box-sizing: border-box; background-color:rgba(30,63,132,1); transition: background-color .4s } 
 
 a { text-decoration: none; color:white } 
 ul { list-style: none; margin: 0; padding: 0 } 
@@ -13,9 +13,9 @@ article, .container { width:80%; margin:0 auto; display:flex; position:relative 
 
 article { width:70%; flex-direction: column } 
 article h3 { text-align:left } 
-h1, h2, h3, h4, h5, h6 { color:white; margin:0; padding:0; line-height:1 } 
+h1, h2, h3, h4, h5, h6 { color:white; margin:0; padding:0; } 
 h1 { font-family: 'NanumSquare', sans-serif; font-size:40px; margin-bottom:1.5rem } 
-/* section { transition: backgorund-color .4s }  */
+/* section { transition: backgorund-color .4s } */
 section:not(.intro) h1 { font-size:40px } 
 h2 { font-size:40px; } 
 p { color: white } 
@@ -32,7 +32,7 @@ p { color: white }
 
 
 /* header */
-header { z-index:100; display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; left: 0; width: 100%; padding: 1rem 2rem; box-sizing: border-box; transition: background-color .4s } 
+header { z-index:100; display: flex; justify-content: space-between; align-items: center; position: absolute; top: 0; left: 0; width: 100%; padding: 1rem 2rem; box-sizing: border-box; transition: background-color .4s } 
 header .logo { opacity:0; background: url(../images/logo_wh.png) no-repeat center; width: 3rem; height: 3rem; background-size: cover; animation: moveDown 1.2s forwards } 
 header a { font-family:'Poppins', sans-serif; } 
 header .menu { display: flex } 
@@ -50,21 +50,15 @@ header.active .logo { background-image: url(../images/logo.png) }
 
 
 
-/* footer */
-footer { background-color:var(--color-navy); width:100%; padding:5rem 10%; box-sizing: border-box; display:flex; justify-content: space-between; color:white } 
-footer div { text-transform: uppercase } 
-footer .media { display:flex } 
-footer .media li { margin-left:1rem } 
-
 /* intro */
 section.intro { width: 100%; height:100vh; overflow: hidden; } 
-section.intro video { min-width:100%; height: 100% } 
+section.intro video { min-width:100%; } 
 section.intro::before { content:''; position:absolute; top:0; left:0; right:0; bottom:0; background-color: rgba(3, 23, 65, 0.5); } 
 section.intro::after { content:''; position:absolute; height:300px; left:0; right:0; bottom:0; background-image: linear-gradient( rgba(3, 23, 65,0), rgba(3, 23, 65,1)); } 
 section.intro .title { position: absolute; top:30%; left:15%; } 
-section.intro .title h1 { text-align:left; overflow:hidden; font-family: 'Cinzel Decorative', cursive; font-weight:700; font-size:100px; text-transform: uppercase; margin-bottom:0 } 
+section.intro .title h1 { line-height:1; overflow:hidden; font-family: 'Cinzel Decorative', cursive; font-weight:700; font-size:120px; text-transform: uppercase; margin-bottom:0 } 
 section.intro .title h1 span { opacity:0; animation: moveUp .8s forwards; animation-delay: .2s; display:block } 
-section.intro .title h2 { text-align:left; margin-bottom:2rem; font-family: 'Poppins', sans-serif; font-size:28px; letter-spacing:14px; text-transform: uppercase; font-weight:300 } 
+section.intro .title h2 { line-height:1; margin-bottom:2rem; font-family: 'Poppins', sans-serif; font-size:39px; letter-spacing:14px; text-transform: uppercase; font-weight:300 } 
 section.intro .title h2 span { opacity:0; animation: moveUp .8s forwards; animation-delay: .5s; display:block } 
 section.intro .title p { opacity:0; animation: moveRight .8s forwards; animation-delay: .8s; } 
 section.intro .media { z-index: 10; position: absolute; left: 2rem; bottom: 2rem; display: flex; flex-direction: column } 
@@ -76,7 +70,7 @@ section.intro .media li:nth-child(3) { animation-delay: .9s }
 
 /* about */
 section.about { display:flex; flex-direction:column; box-sizing: border-box; width:100%; background-image: linear-gradient(rgba(3, 23, 65,1), rgba(30,63,132,1)); padding:10rem 10rem 5rem; z-index:2; } 
-section.about h1 { font-size:8vw; font-family:'Libre Baskerville', serif; font-weight:normal; color:rgba(88,124,188,.3); text-align:left; } 
+section.about::before { content:'What is Freediving?'; font-size:8vw; font-family:'Libre Baskerville', serif; font-weight:normal; color:rgba(88,124,188,.3); text-align:left; } 
 section.about .desc { position:relative; word-break: keep-all; color:rgba(255,255,255,1); margin:-20% 0 0 30%; padding:10% 0 0 3rem } 
 section.about .desc::before { font-family:'Libre Baskerville', serif; font-size:15vw; content:'\201C'; color:rgba(88,124,188,.1); position: absolute; bottom:-10rem; left:-5rem; } 
 section.about .desc::after { font-family:'Libre Baskerville', serif; font-size:15vw; content:'\201D'; color:rgba(88,124,188,.1); position: absolute; top:5rem; right:-5rem; } 
@@ -87,85 +81,77 @@ section.slick-slider { width:50vw; height:420px; margin-top:-8%; margin-left:10%
 section.slick-slider img { width:100% } 
 
 
-section[class*="scroll-text"] { margin-bottom:5rem; font-family:'Libre Baskerville', serif; font-weight:bold; color:transparent; -webkit-text-stroke: 1px rgba(88,124,188,.5); text-transform:uppercase; white-space:nowrap; } 
-section.scroll-text { font-size:13vw;  } 
-section.scroll-text-02 { font-size:8vw;  } 
+section[class*="scroll-text"] { font-family:'Libre Baskerville', serif; font-weight:bold; color:transparent; -webkit-text-stroke: 1px rgba(88,124,188,.5); text-transform:uppercase; white-space:nowrap; } 
+section.scroll-text { font-size:13vw; } 
+section.scroll-text-02 { font-size:8vw; } 
 
 /* terms */
-section.terms { position:relative; width: 100%; display:flex } 
-section.terms .title {margin-left:10rem; flex:1 1 auto}
-section.terms h4 { margin-bottom:3rem } 
-section.terms .terms-slider {right:-5rem; width:60vw}
-section.terms .slick-dots { bottom:-40px } 
+section.terms { position:relative; width: 85vw; margin-left:15vw; display:flex } 
+section.terms .title { min-width:300px; margin-right: 5rem; display:flex; flex-direction: column; justify-content: center } 
+
+section.terms .terms-slider { margin-bottom:0; margin-right:-10vw; width:70vw; min-height:400px } 
+section.terms .slick-dots { bottom:6rem; left:-8rem; width:auto; transform: rotate(90deg) } 
 section.terms .slick-dots li.slick-active button:before { color:white; transform:scale(1.5) } 
 
-section.terms dl { background:white; background-size:cover; text-align:center; padding:2rem 1rem; margin:.5rem; border-radius:.5rem; display: flex; flex-direction: column; justify-content: center; transition: opacity .4s; } 
-section.terms dl::before {content:''; display:block; color: var(--color-blue); font-family: 'Libre Baskerville', serif; font-size:2rem; text-transform: uppercase}
-section.terms dl small { font-weight:bold; color:slategray } 
-section.terms dl dt { font-size:18px; padding-top:6rem; background-position: top 1rem center; background-repeat: no-repeat; background-size:64px 64px } 
-section.terms dl dd { font-size:14px; color:#999; margin:0; padding:0 } 
+section.terms dl { opacity:.3; height:40vh; background:white; background-size:cover; text-align:center; padding:2rem 1rem; margin:.5rem; border-radius:.5rem; display: flex; flex-direction: column; justify-content: center; transition: opacity .4s; } 
+section.terms dl small { color:var(--color-coral); font-family:"Poppins" } 
+section.terms dl dt:first-of-type { font-size: 1.5rem; text-transform: uppercase; font-family:'Libre Baskerville'; color:var(--color-navy) } 
+section.terms dl dt:last-of-type { font-size:1.5rem; color:var(--color-blue); font-weight:bold; padding-top:10rem; margin-bottom:1rem; background-position: center; background-repeat: no-repeat; background-size:64px 64px } 
+section.terms dl dd { color:slategray; margin:0; padding:0 } 
 
-section.terms .sta {background-image:url(https://source.unsplash.com/featured/?underwater/1)}
-section.terms .dyn {background-image:url(https://source.unsplash.com/featured/?underwater/2)}
-section.terms .dnf {background-image:url(https://source.unsplash.com/featured/?underwater/3)}
-section.terms .fim {background-image:url(https://source.unsplash.com/featured/?underwater/4)}
-section.terms .cwt {background-image:url(https://source.unsplash.com/featured/?underwater/5)}
-section.terms .cnf {background-image:url(https://source.unsplash.com/featured/?underwater/6)}
-section.terms .vwt {background-image:url(https://source.unsplash.com/featured/?underwater/7)}
-section.terms .nlt {background-image:url(https://source.unsplash.com/featured/?underwater/8)}
+section.terms dl { background:url(https://source.unsplash.com/featured/?underwater/1) }
+section.terms dl:nth-child(even) { background:url(https://source.unsplash.com/featured/?underwater/2) }
 
-section.terms .slick-current {background:white}
+section.terms .slick-current { opacity:1; background:white !important; background-image:none !important } 
+section.terms .slick-current > * {opacity: 0; animation: moveSmallUp 1s forwards}
+section.terms .slick-current dt:first-of-type {animation-delay: .1s}
+section.terms .slick-current small {animation-delay: .3s; display:block}
+section.terms .slick-current dt:last-of-type {animation-delay: .5s}
+section.terms .slick-current dd {animation-delay: .7s}
 
-section.terms .sta::before {content:'sta'}
-section.terms .dyn::before {content:'dyn'}
-section.terms .dnf::before {content:'dnf'}
-section.terms .fim::before {content:'fim'}
-section.terms .cwt::before {content:'cwt'}
-section.terms .cnf::before {content:'cnf'}
-section.terms .vwt::before {content:'vwt'}
-section.terms .nlt::before {content:'nlt'}
 
-section.terms .sta dt { background-image:url(../images/ico/sta.png) } 
-section.terms .dyn dt { background-image:url(../images/ico/dyn.png) } 
-section.terms .dnf dt { background-image:url(../images/ico/dnf.png) } 
-section.terms .fim dt { background-image:url(../images/ico/fim.png) } 
-section.terms .cwt dt { background-image:url(../images/ico/cwt.png) } 
-section.terms .cnf dt { background-image:url(../images/ico/cnf.png) } 
-section.terms .vwt dt { background-image:url(../images/ico/vwt.png) } 
-section.terms .nlt dt { background-image:url(../images/ico/nlt.png) } 
+
+section.terms .sta dt:last-of-type { background-image:url(../images/ico/sta.png) } 
+section.terms .dyn dt:last-of-type { background-image:url(../images/ico/dyn.png) } 
+section.terms .dnf dt:last-of-type { background-image:url(../images/ico/dnf.png) } 
+section.terms .fim dt:last-of-type { background-image:url(../images/ico/fim.png) } 
+section.terms .cwt dt:last-of-type { background-image:url(../images/ico/cwt.png) } 
+section.terms .cnf dt:last-of-type { background-image:url(../images/ico/cnf.png) } 
+section.terms .vwt dt:last-of-type { background-image:url(../images/ico/vwt.png) } 
+section.terms .nlt dt:last-of-type { background-image:url(../images/ico/nlt.png) } 
 
 
 
 /* curriculum */
-section.curriculum { margin:5rem 0 } 
+section.curriculum { margin:5rem auto } 
+section.curriculum .container { display:flex; justify-content: space-around } 
 section.curriculum .container::before { content:''; position:absolute; top:2rem; left:50%; bottom:2rem; width:1px; height:calc(100% - 4rem); background:rgba(88,124,188,.3) } 
-section.curriculum .container div { max-width:500px; overflow:hidden; position:relative; cursor:pointer; display:flex; justify-content: center; align-items: center; height:80vh; flex:1; margin:3rem; background-repeat:no-repeat; background-position: center; background-size: cover } 
+section.curriculum .container div { min-width:500px; overflow:hidden; position:relative; cursor:pointer; display:flex; justify-content: center; align-items: center; height:80vh; flex:1; margin:3rem; background-repeat:no-repeat; background-position: center; background-size: cover } 
 section.curriculum .container div h3 { position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); font-size:4vw; font-family:'Libre Baskerville', serif; font-weight:bold; color:white; text-transform: uppercase } 
 
 
 
 /* experience */
-section.experience { display:flex; margin:5rem 0; position: relative; margin-bottom:10rem } 
-section.experience .ex-slider { width:70vw; height:500px; overflow: hidden; z-index:1 } 
+section.experience { display:flex; align-content: center; margin:5rem 0; position: relative; margin-bottom:10rem } 
+section.experience .ex-slider { position: absolute; top:10vh; left:0; bottom:0; width:56vw; overflow: hidden; z-index:1 } 
 section.experience .ex-slider img { width:100% } 
-section.experience ul { z-index:2; width:30vw; margin-top:300px; margin-left:-15rem; background:var(--color-blue); color:white; padding:3rem } 
+section.experience ul { width:56vw; height:80vh; margin-left:44vw; background: var(--color-blue); color:white; padding-top:5rem; padding-left:15vw } 
 section.experience ul li small { color:var(--color-lavender); line-height: 2; font-weight: bold } 
 section.experience ul li p { margin:0 0 2rem } 
 section.experience ul li span { font-size:18px; font-weight: bold } 
-section.experience ul + button { position: absolute; bottom: 0; padding:1.5rem 5rem; font-size:20px; left:30vw; border:1px solid rgba(88,124,188,.6); } 
-section.experience ul + button ion-icon { transition: transform .2s; } 
-section.experience ul + button:hover ion-icon { transform: translateX(10px) } 
+section.experience button { padding:1.5rem 5rem; font-size:20px; left:30vw; background:var(--color-navy); border:0; margin-top:3rem } 
+section.experience button ion-icon { transition: transform .2s; } 
+section.experience button:hover ion-icon { transform: translateX(10px) } 
 
 
 
 /* team */
-section.team { position: relative; } 
-section.team::after { content:''; position:absolute; height:300px; left:0; right:0; bottom:0; background-image: linear-gradient( rgba(3, 23, 65,0), rgba(3, 23, 65,1)); } 
+section.team { position: relative; background-image: linear-gradient(rgba(30,63,132,1),rgba(3, 23, 65,1))} 
 
 section.team h2, section.team h3 { text-align:left; margin-bottom:1rem } 
 section.team h3 { color:coral; margin-bottom:3rem } 
 
-section.team .container { width:100%; } 
+section.team .container { width:90%; } 
 section.team .container div { position:relative; padding:6rem; display:flex; justify-content: center; flex-direction: column; flex:1 1 auto; height:70vh; background-size:cover; background-repeat: no-repeat; background-position: center } 
 section.team .container div::before { content:''; position:absolute; top:0; left:0; right:0; bottom:0; background-color:rgba(0,0,0,.3); } 
 section.team .container div:hover::before { background-color:transparent; transition: .2s } 
@@ -173,6 +159,14 @@ section.team .k1 { background-image:url(../images/aida.jpg) }
 section.team .sori { background-image:url(../images/padi.jpg) } 
 section.team ul li { line-height:2; font-size:18px } 
 section.team ul li::before { content:'- ' } 
+
+
+
+/* footer */
+footer { background-color:rgba(3, 23, 65,1); width:100%; padding:5rem 10%; box-sizing: border-box; display:flex; justify-content: space-between; color:white } 
+footer div { text-transform: uppercase } 
+footer .media { display:flex } 
+footer .media li { margin-left:1rem } 
 
 
 
@@ -185,11 +179,11 @@ article .table .row { display:flex; border-bottom:1px solid rgba(255,255,255,.5)
 article .table .row:last-of-type { border-bottom: 0 } 
 article .table span { flex:1 1 20% } 
 
-.aida {transition: background-color .2s}
+.aida { transition: background-color .2s } 
 .aida-menu { display:flex; margin:10rem auto 3rem; position:fixed; bottom:13rem; left:-13rem; transform:rotate(90deg) } 
 .aida-menu li { margin:0 20px; } 
 .aida-menu li.active a { color:white; -webkit-text-stroke: 0; transform: scale(1.2); display:block; transition:transform .2s } 
-.aida-menu li a {font-size:1.5rem; font-family:'Libre Baskerville', serif; font-weight:bold; color:rgba(255,255,255,.3); text-transform:uppercase;}
+.aida-menu li a { font-size:1.5rem; font-family:'Libre Baskerville', serif; font-weight:bold; color:rgba(255,255,255,.3); text-transform:uppercase; } 
 
 .aida article > .row { border-bottom:1px solid rgba(255,255,255,.3); padding:2rem 1rem; display:flex; align-items: center } 
 .aida article > .row h3 { min-width:300px } 
@@ -211,6 +205,11 @@ article .table span { flex:1 1 20% }
 @keyframes moveUp { 
  0% { opacity:0; transform: translateY(120%) } 
  100% { opacity:1; transform: translateY(0%) } 
+ }
+
+ @keyframes moveSmallUp { 
+ 0% { opacity: 0; transform: translateY(30px) } 
+ 100% { opacity: 1; transform: translateY(0) } 
  }
 
 @keyframes moveDown { 
