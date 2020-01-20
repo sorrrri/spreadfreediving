@@ -1,7 +1,7 @@
 :root { --color-coral : #E87C70; --color-bluegreen : #2E5A79; --color-navy : #1E3F84; --color-blue : #587CBC; --color-lavender : #D5C1E8; --color-babypink : #EFD7EC; } 
 
 html,
-body { word-break:keep-all; overflow-x:hidden; font: 17px/1.2 'NanumSquare', sans-serif; margin: 0; padding: 0; box-sizing: border-box; background-color:rgba(30,63,132,1); transition: background-color .4s } 
+body { word-break:keep-all; overflow-x:hidden; font: 1vw/1.2 'NanumSquare', sans-serif; margin: 0; padding: 0; box-sizing: border-box; background-color:rgba(30,63,132,1); transition: background-color .4s } 
 
 a { text-decoration: none; color:white } 
 ul { list-style: none; margin: 0; padding: 0 } 
@@ -16,7 +16,7 @@ article h3 { text-align:left }
 h1, h2, h3, h4, h5, h6 { color:white; margin:0; padding:0; } 
 h1 { font-family: 'NanumSquare', sans-serif; font-size:40px; margin-bottom:1.5rem } 
 /* section { transition: backgorund-color .4s } */
-section:not(.intro) h1 { font-size:40px } 
+section:not(.intro) h1 { font-size:4vw } 
 h2 { font-size:40px; } 
 p { color: white } 
 
@@ -70,11 +70,11 @@ section.intro .media li:nth-child(3) { animation-delay: .9s }
 
 /* about */
 section.about { display:flex; flex-direction:column; box-sizing: border-box; width:100%; background-image: linear-gradient(rgba(3, 23, 65,1), rgba(30,63,132,1)); padding:10rem 10rem 5rem; z-index:2; } 
-section.about::before { content:'What is Freediving?'; font-size:8vw; font-family:'Libre Baskerville', serif; font-weight:normal; color:rgba(88,124,188,.3); text-align:left; } 
-section.about .desc { position:relative; word-break: keep-all; color:rgba(255,255,255,1); margin:-20% 0 0 30%; padding:10% 0 0 3rem } 
+section.about::before { content:'What is Freediving?'; max-width:70vw; font-size:8vw; font-family:'Libre Baskerville', serif; font-weight:normal; color:rgba(88,124,188,.3); text-align:left; } 
+section.about .desc { font-size:1vw; position:relative; word-break: keep-all; color:rgba(255,255,255,1); margin:-20% 0 0 30%; padding:10% 0 0 3rem } 
 section.about .desc::before { font-family:'Libre Baskerville', serif; font-size:15vw; content:'\201C'; color:rgba(88,124,188,.1); position: absolute; bottom:-10rem; left:-5rem; } 
 section.about .desc::after { font-family:'Libre Baskerville', serif; font-size:15vw; content:'\201D'; color:rgba(88,124,188,.1); position: absolute; top:5rem; right:-5rem; } 
-section.about .inner-wrap { margin:3rem 0 0 10%; width:600px; height:350px } 
+section.about .inner-wrap { margin:3rem 0 0 10%; width:50vw; height:50vh; min-width:600px; min-height:350px } 
 
 /* slick slider */
 section.slick-slider { width:50vw; height:420px; margin-top:-8%; margin-left:10%; z-index:10; overflow:hidden } 
@@ -124,16 +124,16 @@ section.terms .nlt dt:last-of-type { background-image:url(../images/ico/nlt.png)
 section.curriculum { margin:5rem auto } 
 section.curriculum .container { display:flex; justify-content: space-around } 
 section.curriculum .container::before { content:''; position:absolute; top:2rem; left:50%; bottom:2rem; width:1px; height:calc(100% - 4rem); background:rgba(88,124,188,.3) } 
-section.curriculum .container div { min-width:500px; overflow:hidden; position:relative; cursor:pointer; display:flex; justify-content: center; align-items: center; height:80vh; flex:1; margin:3rem; background-repeat:no-repeat; background-position: center; background-size: cover } 
+section.curriculum .container div { width:40vw; min-width:500px; height:80vh; max-height:800px; overflow:hidden; position:relative; cursor:pointer; display:flex; justify-content: center; align-items: center; flex:1; margin:3rem; background-repeat:no-repeat; background-position: center; background-size: cover } 
 section.curriculum .container div h3 { position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); font-size:4vw; font-family:'Libre Baskerville', serif; font-weight:bold; color:white; text-transform: uppercase } 
 
 
 
 /* experience */
 section.experience { display:flex; align-content: center; margin:5rem 0; position: relative; margin-bottom:10rem } 
-section.experience .ex-slider { position: absolute; top:10vh; left:0; bottom:0; width:56vw; overflow: hidden; z-index:1 } 
+section.experience .ex-slider { position: absolute; top:50%; transform:translateY(-50%); height:800px; left:0; bottom:0; width:56vw; overflow: hidden; z-index:1 } 
 section.experience .ex-slider img { width:100% } 
-section.experience ul { width:56vw; height:80vh; margin-left:44vw; background: var(--color-blue); color:white; padding-top:5rem; padding-left:15vw } 
+section.experience ul { width:56vw; margin-left:44vw; background: var(--color-blue); color:white; padding:5rem 0 5rem 15vw } 
 section.experience ul li small { color:var(--color-lavender); line-height: 2; font-weight: bold } 
 section.experience ul li p { margin:0 0 2rem } 
 section.experience ul li span { font-size:18px; font-weight: bold } 
