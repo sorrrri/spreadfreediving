@@ -124,8 +124,8 @@ section.terms .nlt dt:last-of-type { background-image:url(../images/ico/nlt.png)
 section.curriculum { margin:5rem auto } 
 section.curriculum .container { display:flex; justify-content: space-around } 
 section.curriculum .container::before { content:''; position:absolute; top:2rem; left:50%; bottom:2rem; width:1px; height:calc(100% - 4rem); background:rgba(88,124,188,.3) } 
-section.curriculum .container div { width:40vw; min-width:500px; height:80vh; max-height:800px; overflow:hidden; position:relative; cursor:pointer; display:flex; justify-content: center; align-items: center; flex:1; margin:3rem; background-repeat:no-repeat; background-position: center; background-size: cover } 
-section.curriculum .container div h3 { position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); font-size:4vw; font-family:'Libre Baskerville', serif; font-weight:bold; color:white; text-transform: uppercase } 
+section.curriculum .container a { width:40vw; min-width:500px; height:80vh; max-height:800px; overflow:hidden; position:relative; cursor:pointer; display:flex; justify-content: center; align-items: center; flex:1; margin:3rem; background-repeat:no-repeat; background-position: center; background-size: cover } 
+section.curriculum .container a h3 { position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); font-size:4vw; font-family:'Libre Baskerville', serif; font-weight:bold; color:white; text-transform: uppercase } 
 
 
 

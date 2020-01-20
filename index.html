@@ -24,7 +24,7 @@
 <body>
     <div class="wrapper">
         <header>
-            <div class="logo"></div>
+            <a href="./index.html"><div class="logo"></div></a>
             <ul class="menu">
                 <li class="about"><a href="">about</a></li>
                 <li class="curriculum"><a href="">curriculum</a></li>
@@ -66,7 +66,8 @@
                     레포츠와 경기로 발전하면서 깊은 수심까지 내려가는 것도 프리다이빙입니다.</p>
                 <p class="wow fadeInUp" data-wow-delay=".8s">이렇듯 프리다이빙은 우리가 물과 함께 하면서 오래전부터 항상 해오던 친숙한 활동으로, 현대에 새롭게 생겨난
                     활동이 아닙니다.</p>
-                <p class="wow fadeInUp" data-wow-delay="1s">프리다이빙이란!수중에서 무호흡으로 즐길 수 있는 모든 활동을 의미하며, 이미 많은 다이버들이 접하고, 즐기고 있습니다.
+                <p class="wow fadeInUp" data-wow-delay="1s">프리다이빙이란!수중에서 무호흡으로 즐길 수 있는 모든 활동을 의미하며, 이미 많은 다이버들이 접하고, 즐기고
+                    있습니다.
                 </p>
                 <p class="wow fadeInUp" data-wow-delay="1.2s">“도전해보세요, 당신을 새로운 경험과 가치를 느낄 수 있도록 도와드립니다”</p>
             </div>
@@ -135,12 +136,16 @@
 
         <section class="curriculum">
             <div class="container">
+                <a href="./aida.html">
                 <div class="aida wow fadeInUp">
                     <h3>aida</h3>
                 </div>
+                </a>
+                <a href="./padi.html">
                 <div class="padi wow fadeInUp" data-wow-delay=".2s">
                     <h3>padi</h3>
                 </div>
+                </a>
             </div>
         </section>
 
@@ -278,21 +283,21 @@
             speed: 400,
             slidesToShow: 3,
             responsive: [{
-                    breakpoint: 768,
-                    settings: {
-                        arrows: false,
-                        centerMode: true,
-                        slidesToShow: 2
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        arrows: false,
-                        centerMode: true,
-                        slidesToShow: 1
-                    }
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    slidesToShow: 2
                 }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    slidesToShow: 1
+                }
+            }
             ]
         });
     </script>
