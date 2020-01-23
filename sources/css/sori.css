@@ -1,12 +1,12 @@
 :root { --color-coral : #E87C70; --color-bluegreen : #2E5A79; --color-navy : #1E3F84; --color-blue : #587CBC; --color-lavender : #D5C1E8; --color-babypink : #EFD7EC; } 
 
 html,
-body { word-break:keep-all; overflow-x:hidden; font: 1vw/1.2 'NanumSquare', sans-serif; margin: 0; padding: 0; box-sizing: border-box; background-color:rgba(30,63,132,1); transition: background-color .4s } 
+body { word-break:keep-all; overflow-x:hidden; width:100%;  font: 1.8vh/1.2 'NanumSquare', sans-serif; margin: 0; padding: 0; box-sizing: border-box; } 
 
 a { text-decoration: none; color:white } 
 ul { list-style: none; margin: 0; padding: 0 } 
 span, li { color: white } 
-button { color:white; background:transparent; font-size: 17px; font-family: "NanumSquare"; padding:1rem 2rem; display:flex; align-items:center } 
+button { font-family: 'Michroma', sans-serif; background:transparent; border:1px solid white; color:white; text-transform:uppercase; padding:1rem 2rem; display:flex; align-items:center } 
 .wrapper { display: flex; flex-direction: column } 
 article, .container { width:80%; margin:0 auto; display:flex; position:relative } 
 .grid { display:grid; align-items: center } 
@@ -18,7 +18,7 @@ h1 { font-family: 'NanumSquare', sans-serif; font-size:40px; margin-bottom:1.5re
 /* section { transition: backgorund-color .4s } */
 section:not(.intro) h1 { font-size:4vw } 
 h2 { font-size:40px; } 
-p { color: white } 
+p { color: white; margin:.5rem 0 } 
 
 
 /* color */
@@ -29,6 +29,13 @@ p { color: white }
 .color-lavender { color:#D5C1E8 } 
 .color-babypink { color:#EFD7EC } 
 
+.bg { width: 100%; height: 100%; overflow: hidden; display: flex; background-color: rgba(3, 23, 65, 1); position: fixed;; } 
+.bg .segment { flex: 1; background: url(./../images/bg_02.jpg); background-size:cover; background-position: 0px 50%; background-attachment: fixed; mix-blend-mode: screen; opacity: 0.4; transition: all 800ms cubic-bezier(0.215, 0.61, 0.355, 1); } 
+.bg .segment:nth-child(2) { background-position: 0px 58%; flex: 0.5; } 
+.bg .segment:nth-child(3) { background-position: 0px 40%; flex: 3; } 
+.bg .segment:nth-child(4) { background-position: 0px 30%; flex: 2; } 
+.bg .segment:nth-child(5) { background-position: 0px 53%; } 
+.segment.straighten { background-position: 0px 50% !important; transition: all 800ms cubic-bezier(0.215, 0.61, 0.355, 1); } 
 
 
 /* header */
@@ -51,25 +58,35 @@ header.active .logo { background-image: url(../images/logo.png) }
 
 
 /* intro */
-section.intro { width: 100%; height:100vh; overflow: hidden; } 
+section.intro { z-index:6; width: 100%; height:100vh; overflow: hidden; } 
 section.intro video { min-width:100%; } 
-section.intro::before { content:''; position:absolute; top:0; left:0; right:0; bottom:0; background-color: rgba(3, 23, 65, 0.5); } 
-section.intro::after { content:''; position:absolute; height:300px; left:0; right:0; bottom:0; background-image: linear-gradient( rgba(3, 23, 65,0), rgba(3, 23, 65,1)); } 
+/* section.intro::before { content:''; position:absolute; top:0; left:0; right:0; bottom:0; background-color: rgba(3, 23, 65, 0.5); } */
+/* section.intro::after { content:''; position:absolute; height:300px; left:0; right:0; bottom:0; background-image: linear-gradient( rgba(3, 23, 65,0), rgba(3, 23, 65,1)); } */
 section.intro .title { position: absolute; top:30%; left:15%; } 
-section.intro .title h1 { line-height:1; overflow:hidden; font-family: 'Cinzel Decorative', cursive; font-weight:700; font-size:120px; text-transform: uppercase; margin-bottom:0 } 
-section.intro .title h1 span { opacity:0; animation: moveUp .8s forwards; animation-delay: .2s; display:block } 
-section.intro .title h2 { line-height:1; margin-bottom:2rem; font-family: 'Poppins', sans-serif; font-size:39px; letter-spacing:14px; text-transform: uppercase; font-weight:300 } 
-section.intro .title h2 span { opacity:0; animation: moveUp .8s forwards; animation-delay: .5s; display:block } 
-section.intro .title p { opacity:0; animation: moveRight .8s forwards; animation-delay: .8s; } 
+section.intro .title h1 { line-height:1; overflow:hidden; font-family: 'Cinzel Decorative', cursive; font-weight:700; font-size:10vh; text-transform: uppercase; margin-bottom:0 } 
+section.intro .title h1 span { opacity:0; animation: moveUp .8s forwards .2s; display:block } 
+section.intro .title h2 { line-height:1; margin-bottom:2rem; font-family: 'Poppins', sans-serif; font-size:3vh; letter-spacing:1.3vh; text-transform: uppercase; font-weight:300 } 
+section.intro .title h2 span { opacity:0; animation: moveUp .8s forwards .5s; display:block } 
+section.intro .title p { opacity:0; animation: moveRight .8s forwards .8s; } 
+section.intro .title button { opacity:0; animation: moveSmallUp .8s forwards .8s; margin-top:3rem } 
 section.intro .media { z-index: 10; position: absolute; left: 2rem; bottom: 2rem; display: flex; flex-direction: column } 
-section.intro .media li { margin-top: 1rem; opacity: 0; animation: moveDown 1.2s forwards; } 
+section.intro .media li { margin-top: 1rem; opacity: 0; animation: moveSmallUp 1.2s forwards; } 
 section.intro .media li:nth-child(1) { animation-delay: .5s } 
 section.intro .media li:nth-child(2) { animation-delay: .7s } 
 section.intro .media li:nth-child(3) { animation-delay: .9s } 
+section.intro .scroll-downs { opacity:0; animation:appear 1.2s forwards 1s; position: absolute; right: 0; bottom: 3rem; left: 0; margin: auto; width :34px; height: 55px; } 
+section.intro .mousey { width: 3px; padding: 10px 15px; height: 35px; border: 2px solid #fff; border-radius: 25px; opacity: 0.75; box-sizing: content-box; } 
+section.intro .scroller { width: 3px; height: 10px; border-radius: 25%; background-color: #fff; animation: scroll 2.2s cubic-bezier(.15,.41,.69,.94) infinite; } 
+
+@keyframes scroll { 
+ 0% { opacity: 0; } 
+ 10% { transform: translateY(0); opacity: 1; } 
+ 100% { transform: translateY(15px); opacity: 0; } 
+ }
 
 
 /* about */
-section.about { display:flex; flex-direction:column; box-sizing: border-box; width:100%; background-image: linear-gradient(rgba(3, 23, 65,1), rgba(30,63,132,1)); padding:10rem 10rem 5rem; z-index:2; } 
+section.about { display:flex; flex-direction:column; box-sizing: border-box; width:100%; padding:0 10vw 5rem; z-index:2; } 
 section.about::before { content:'What is Freediving?'; max-width:70vw; font-size:8vw; font-family:'Libre Baskerville', serif; font-weight:normal; color:rgba(88,124,188,.3); text-align:left; } 
 section.about .desc { font-size:1vw; position:relative; word-break: keep-all; color:rgba(255,255,255,1); margin:-20% 0 0 30%; padding:10% 0 0 3rem } 
 section.about .desc::before { font-family:'Libre Baskerville', serif; font-size:15vw; content:'\201C'; color:rgba(88,124,188,.1); position: absolute; bottom:-10rem; left:-5rem; } 
@@ -81,21 +98,21 @@ section.slick-slider { width:50vw; height:420px; margin-top:-8%; margin-left:10%
 section.slick-slider img { width:100% } 
 
 
-section[class*="scroll-text"] { font-family:'Libre Baskerville', serif; font-weight:bold; color:transparent; -webkit-text-stroke: 1px rgba(88,124,188,.5); text-transform:uppercase; white-space:nowrap; } 
+section[class*="scroll-text"] { font-family:'Libre Baskerville', serif; font-weight:bold; color:transparent; -webkit-text-stroke: 1px rgba(88,124,188,.6); text-transform:uppercase; white-space:nowrap; } 
 section.scroll-text { font-size:13vw; } 
-section.scroll-text-02 { font-size:8vw; } 
+section.scroll-text-02 { font-size:10vw; } 
 
 /* terms */
 section.terms { position:relative; width: 85vw; margin-left:15vw; display:flex } 
 section.terms .title { min-width:300px; margin-right: 5rem; display:flex; flex-direction: column; justify-content: center } 
 
-section.terms .terms-slider { margin-bottom:0; margin-right:-10vw; width:70vw; min-height:400px } 
+section.terms .terms-slider { cursor:grab; margin-bottom:0; margin-right:-10vw; width:70vw; min-height:400px } 
 section.terms .slick-dots { bottom:6rem; left:-8rem; width:auto; transform: rotate(90deg) } 
 section.terms .slick-dots li.slick-active button:before { color:white; transform:scale(1.5) } 
 
 section.terms dl { opacity:.3; height:40vh; background:white; background-size:cover; text-align:center; padding:2rem 1rem; margin:.5rem; border-radius:.5rem; display: flex; flex-direction: column; justify-content: center; transition: opacity .4s; } 
-section.terms dl:nth-child(odd) { background:url(https://source.unsplash.com/featured/?underwater/1) }
-section.terms dl:nth-child(even) { background:url(https://source.unsplash.com/featured/?underwater/2) }
+section.terms dl:nth-child(odd) { background:url(https://source.unsplash.com/featured/?underwater/1) } 
+section.terms dl:nth-child(even) { background:url(https://source.unsplash.com/featured/?underwater/2) } 
 
 section.terms dl small { color:var(--color-coral); font-family:"Poppins" } 
 section.terms dl dt:first-of-type { font-size: 1.5rem; text-transform: uppercase; font-family:'Libre Baskerville'; color:var(--color-navy) } 
@@ -103,11 +120,11 @@ section.terms dl dt:last-of-type { font-size:1.5rem; color:var(--color-blue); fo
 section.terms dl dd { color:slategray; margin:0; padding:0 } 
 
 section.terms .slick-current { opacity:1; background:white !important; background-image:none !important } 
-section.terms .slick-current > * {opacity: 0; animation: moveSmallUp 1s forwards}
-section.terms .slick-current dt:first-of-type {animation-delay: .1s}
-section.terms .slick-current small {animation-delay: .3s; display:block}
-section.terms .slick-current dt:last-of-type {animation-delay: .5s}
-section.terms .slick-current dd {animation-delay: .7s}
+section.terms .slick-current > * { opacity: 0; animation: moveSmallUp 1s forwards } 
+section.terms .slick-current dt:first-of-type { animation-delay: .1s } 
+section.terms .slick-current small { animation-delay: .3s; display:block } 
+section.terms .slick-current dt:last-of-type { animation-delay: .5s } 
+section.terms .slick-current dd { animation-delay: .7s } 
 
 section.terms .sta dt:last-of-type { background-image:url(../images/ico/sta.png) } 
 section.terms .dyn dt:last-of-type { background-image:url(../images/ico/dyn.png) } 
@@ -126,14 +143,15 @@ section.curriculum .container { display:flex; justify-content: space-around }
 section.curriculum .container::before { content:''; position:absolute; top:2rem; left:50%; bottom:2rem; width:1px; height:calc(100% - 4rem); background:rgba(88,124,188,.3) } 
 section.curriculum .container a { width:40vw; min-width:500px; height:80vh; max-height:800px; overflow:hidden; position:relative; cursor:pointer; display:flex; justify-content: center; align-items: center; flex:1; margin:3rem; background-repeat:no-repeat; background-position: center; background-size: cover } 
 section.curriculum .container a h3 { position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); font-size:4vw; font-family:'Libre Baskerville', serif; font-weight:bold; color:white; text-transform: uppercase } 
-
+section.curriculum .aida { background:url('./../images/aida.jpg') no-repeat left 100px center; background-size: cover; } 
+section.curriculum .padi { background:url('./../images/padi.jpg') no-repeat center; background-size: cover; } 
 
 
 /* experience */
-section.experience { display:flex; align-content: center; margin:5rem 0; position: relative; margin-bottom:10rem } 
+section.experience { display:flex; align-content: center; margin:5rem 0; padding:5%; position: relative; margin-bottom:10rem } 
 section.experience .ex-slider { position: absolute; top:50%; transform:translateY(-50%); height:800px; left:0; bottom:0; width:56vw; overflow: hidden; z-index:1 } 
 section.experience .ex-slider img { width:100% } 
-section.experience ul { width:56vw; margin-left:44vw; background: var(--color-blue); color:white; padding:5rem 0 5rem 15vw } 
+section.experience ul { z-index:5; width:56vw; color:white; padding:5rem 0 5rem 15vw } 
 section.experience ul li small { color:var(--color-lavender); line-height: 2; font-weight: bold } 
 section.experience ul li p { margin:0 0 2rem } 
 section.experience ul li span { font-size:18px; font-weight: bold } 
@@ -144,7 +162,7 @@ section.experience button:hover ion-icon { transform: translateX(10px) }
 
 
 /* team */
-section.team { position: relative; background-image: linear-gradient(rgba(30,63,132,1),rgba(3, 23, 65,1))} 
+section.team { position: relative; } 
 section.team h2, section.team h3 { text-align:left; margin-bottom:1rem } 
 section.team h3 { color:coral; margin-bottom:3rem } 
 section.team .container { width:90%; } 
@@ -153,7 +171,7 @@ section.team .container div::before { content:''; position:absolute; top:0; left
 section.team .container div:hover::before { background-color:transparent; transition: .2s } 
 section.team .k1 { background-image:url(../images/aida.jpg) } 
 section.team .sori { background-image:url(../images/padi.jpg) } 
-section.team ul li { line-height:2; font-size:18px } 
+section.team ul li { line-height:2; } 
 section.team ul li::before { content:'- ' } 
 
 
@@ -198,6 +216,19 @@ article .table span { flex:1 1 20% }
 .aida2 .time small { padding:1rem 0; color:var(--color-coral); border-top:1px solid rgba(255,255,255,.5); border-bottom:1px solid rgba(255,255,255,.5); } 
 
 
+
+@media screen and (max-width:490px){
+    button {justify-content: center;}
+    section {padding:1rem}
+    section.intro {text-align:center; overflow:hidden}
+    section.intro .title {top:50%; left:50%; transform:translate(-50%, -50%)}
+}
+
+@keyframes appear { 
+ 0% { opacity:0; } 
+ 100% { opacity:1; } 
+ }
+ 
 @keyframes moveUp { 
  0% { opacity:0; transform: translateY(120%) } 
  100% { opacity:1; transform: translateY(0%) } 
