@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Spread Freediving</title>
+    <link rel="shortcut icon" href="./sources/logo.ico">
     <link rel="stylesheet" href="./sources/css/sori.css">
     <link rel="stylesheet" href="./sources/css/animate.css">
 
@@ -29,18 +30,18 @@
         <div class="segment"></div>
         <div class="segment"></div>
     </div>
+    <canvas id="liquid"></canvas>
     <div class="wrapper">
         <header>
             <a href="./index.html">
                 <div class="logo"></div>
             </a>
             <ul class="menu">
-                <li class="about"><a href="">about</a></li>
-                <li class="curriculum"><a href="">curriculum</a></li>
-                <li class="schedule"><a href="">schedule</a></li>
-                <li class="promotion"><a href="">promotion</a></li>
-                <li class="gallery"><a href="">gallery</a></li>
-                <li class="contact"><a href="">contact</a></li>
+                <li class="about"><a href="#about">about</a></li>
+                <li class="terms"><a href="#terms">terms</a></li>
+                <li class="curriculum"><a href="#curriculum">curriculum</a></li>
+                <li class="team"><a href="#team">team</a></li>
+                <li class="contact"><a href="#contact">contact</a></li>
             </ul>
         </header>
 
@@ -72,7 +73,7 @@
             </div>
         </section>
 
-        <section class="about wow fadeIn">
+        <section id="about" class="about wow fadeIn">
             <div class="desc">
                 <h1>프리다이빙이란?</h1>
                 <p class="wow fadeInUp" data-wow-delay=".2s">수중에서 이루어지는 무호흡의 모든 활동을 프리다이빙이라 할 수 있습니다.</p>
@@ -90,7 +91,7 @@
         </section>
 
         <section class="scroll-text">spread freediving team spread freediving team</section>
-        <section class="terms wow fadeIn">
+        <section id="terms" class="terms wow fadeIn">
             <div class="title">
                 <h1 class="wow fadeInUp">프리다이빙<br>용어 안내</h1>
                 <p class="wow fadeInUp" data-wow-delay=".4s">프리다이빙 경기에는 총 8가지가 있습니다.<br>어떤 것들이 있는지 함께 알아볼까요?</p>
@@ -192,7 +193,7 @@
             </ul>
         </section>
 
-        <section class="team">
+        <section id="team" class="team">
             <div class="container">
                 <div class="k1 wow fadeIn">
                     <h2 class="wow fadeInUp" data-wow-delay=".2s">한동수</h2>
@@ -221,7 +222,7 @@
             </div>
         </section>
 
-        <footer>
+        <footer id="contact">
             <div>spread freediving</div>
             <ul class="media">
                 <li><a href="">
@@ -240,8 +241,9 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="./sources/js/slick.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.js"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1295275/webgl-hover_min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js'></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1295275/TweenMax.min.js"></script>
     <script src="./sources/js/wow.min.js"></script>
     <script src="./sources/js/sori.js"></script>

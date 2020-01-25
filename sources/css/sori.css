@@ -1,12 +1,13 @@
 :root { --color-coral : #E87C70; --color-bluegreen : #2E5A79; --color-navy : #1E3F84; --color-blue : #587CBC; --color-lavender : #D5C1E8; --color-babypink : #EFD7EC; } 
 
 html,
-body { word-break:keep-all; overflow-x:hidden; width:100%;  font: 1.8vh/1.2 'NanumSquare', sans-serif; margin: 0; padding: 0; box-sizing: border-box; } 
+body { word-break:keep-all; overflow-x:hidden; width:100%; font: 1.8vh/1.5 'NanumSquare', sans-serif; margin: 0; padding: 0; box-sizing: border-box; } 
 
 a { text-decoration: none; color:white } 
 ul { list-style: none; margin: 0; padding: 0 } 
 span, li { color: white } 
-button { font-family: 'Michroma', sans-serif; background:transparent; border:1px solid white; color:white; text-transform:uppercase; padding:1rem 2rem; display:flex; align-items:center } 
+button { font-size:1.2vh; white-space: nowrap; background: transparent url(../images/bg_liquid_fill.png) repeat-x 0 -100%; transition: 1.5s ease; font-family: 'Michroma', sans-serif; border:1px solid white; color:white; text-transform:uppercase; padding:1rem 2rem; display:flex; align-items:center; cursor: pointer; } 
+button:hover { background-position: 500% 100%; color:#1E3F84 } 
 .wrapper { display: flex; flex-direction: column } 
 article, .container { width:80%; margin:0 auto; display:flex; position:relative } 
 .grid { display:grid; align-items: center } 
@@ -18,7 +19,7 @@ h1 { font-family: 'NanumSquare', sans-serif; font-size:40px; margin-bottom:1.5re
 /* section { transition: backgorund-color .4s } */
 section:not(.intro) h1 { font-size:4vw } 
 h2 { font-size:40px; } 
-p { color: white; margin:.5rem 0 } 
+p { color: white; margin:.5rem 0; } 
 
 
 /* color */
@@ -88,7 +89,7 @@ section.intro .scroller { width: 3px; height: 10px; border-radius: 25%; backgrou
 /* about */
 section.about { display:flex; flex-direction:column; box-sizing: border-box; width:100%; padding:0 10vw 5rem; z-index:2; } 
 section.about::before { content:'What is Freediving?'; max-width:70vw; font-size:8vw; font-family:'Libre Baskerville', serif; font-weight:normal; color:rgba(88,124,188,.3); text-align:left; } 
-section.about .desc { font-size:1vw; position:relative; word-break: keep-all; color:rgba(255,255,255,1); margin:-20% 0 0 30%; padding:10% 0 0 3rem } 
+section.about .desc { position:relative; word-break: keep-all; color:rgba(255,255,255,1); margin:-20% 0 0 30%; padding:10% 0 0 3rem } 
 section.about .desc::before { font-family:'Libre Baskerville', serif; font-size:15vw; content:'\201C'; color:rgba(88,124,188,.1); position: absolute; bottom:-10rem; left:-5rem; } 
 section.about .desc::after { font-family:'Libre Baskerville', serif; font-size:15vw; content:'\201D'; color:rgba(88,124,188,.1); position: absolute; top:5rem; right:-5rem; } 
 section.about .inner-wrap { margin:3rem 0 0 10%; width:50vw; height:50vh; min-width:600px; min-height:350px } 
@@ -141,11 +142,12 @@ section.terms .nlt dt:last-of-type { background-image:url(../images/ico/nlt.png)
 section.curriculum { margin:5rem auto } 
 section.curriculum .container { display:flex; justify-content: space-around } 
 section.curriculum .container::before { content:''; position:absolute; top:2rem; left:50%; bottom:2rem; width:1px; height:calc(100% - 4rem); background:rgba(88,124,188,.3) } 
-section.curriculum .container a { width:40vw; min-width:500px; height:80vh; max-height:800px; overflow:hidden; position:relative; cursor:pointer; display:flex; justify-content: center; align-items: center; flex:1; margin:3rem; background-repeat:no-repeat; background-position: center; background-size: cover } 
+section.curriculum .container a { width:40vw; min-width:500px; height:80vh; max-height:1000px; overflow:hidden; position:relative; cursor:pointer; display:flex; justify-content: center; align-items: center; flex:1; margin:3rem; background-repeat:no-repeat; background-position: center; background-size: cover } 
 section.curriculum .container a h3 { position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); font-size:4vw; font-family:'Libre Baskerville', serif; font-weight:bold; color:white; text-transform: uppercase } 
 section.curriculum .aida { background:url('./../images/aida.jpg') no-repeat left 100px center; background-size: cover; } 
 section.curriculum .padi { background:url('./../images/padi.jpg') no-repeat center; background-size: cover; } 
-
+#liquid { position:fixed; z-index:0; top:0; left:0; overflow:hidden; height:100vh; width:100vw; margin:auto; } 
+canvas { width:100%; height:100%; } 
 
 /* experience */
 section.experience { display:flex; align-content: center; margin:5rem 0; padding:5%; position: relative; margin-bottom:10rem } 
@@ -155,7 +157,7 @@ section.experience ul { z-index:5; width:56vw; color:white; padding:5rem 0 5rem 
 section.experience ul li small { color:var(--color-lavender); line-height: 2; font-weight: bold } 
 section.experience ul li p { margin:0 0 2rem } 
 section.experience ul li span { font-size:18px; font-weight: bold } 
-section.experience button { padding:1.5rem 5rem; font-size:20px; left:30vw; background:var(--color-navy); border:0; margin-top:3rem } 
+section.experience button { font-family: NanumSquare; padding:1.5rem 5rem; margin-top:3rem; font-size:1.8vh } 
 section.experience button ion-icon { transition: transform .2s; } 
 section.experience button:hover ion-icon { transform: translateX(10px) } 
 
@@ -169,16 +171,16 @@ section.team .container { width:90%; }
 section.team .container div { position:relative; padding:6rem; display:flex; justify-content: center; flex-direction: column; flex:1 1 auto; height:70vh; background-size:cover; background-repeat: no-repeat; background-position: center } 
 section.team .container div::before { content:''; position:absolute; top:0; left:0; right:0; bottom:0; background-color:rgba(0,0,0,.3); } 
 section.team .container div:hover::before { background-color:transparent; transition: .2s } 
-section.team .k1 { background-image:url(../images/aida.jpg) } 
-section.team .sori { background-image:url(../images/padi.jpg) } 
+section.team .k1 { background-image:url(../images/kone.jpg) } 
+section.team .sori { background-image:url(../images/sori.jpg) } 
 section.team ul li { line-height:2; } 
 section.team ul li::before { content:'- ' } 
 
 
 
 /* footer */
-footer { background-color:rgba(3, 23, 65,1); width:100%; padding:5rem 10%; box-sizing: border-box; display:flex; justify-content: space-between; color:white } 
-footer div { text-transform: uppercase } 
+footer { width:100%; padding:5rem 10%; box-sizing: border-box; display:flex; justify-content: space-between; color:white } 
+footer div { text-transform: uppercase; z-index: 1; } 
 footer .media { display:flex } 
 footer .media li { margin-left:1rem } 
 
@@ -217,12 +219,22 @@ article .table span { flex:1 1 20% }
 
 
 
-@media screen and (max-width:490px){
-    button {justify-content: center;}
-    section {padding:1rem}
-    section.intro {text-align:center; overflow:hidden}
-    section.intro .title {top:50%; left:50%; transform:translate(-50%, -50%)}
-}
+@media screen and (max-width:490px) {
+    
+ header .menu, section.intro .scroll-downs { display:none } 
+ button {margin:3rem auto}
+
+ section { margin:0 !important; padding:2rem !important} 
+
+ section.intro { text-align:center; overflow:hidden } 
+ section.intro .title { top:50%; left:50%; transform:translate(-50%, -50%) } 
+
+ section.about::before {font-size:7vh; line-height: 1.2;}
+ section.about .desc {margin:0; margin-top:-20%; padding:0}
+
+ section.terms {flex-direction: column;}
+ section.terms .terms-slider {width:100vw}
+ }
 
 @keyframes appear { 
  0% { opacity:0; } 
