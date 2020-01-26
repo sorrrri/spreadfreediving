@@ -69,7 +69,7 @@ section.intro .title h1 span { opacity:0; animation: moveUp .8s forwards .2s; di
 section.intro .title h2 { line-height:1; margin-bottom:2rem; font-family: 'Poppins', sans-serif; font-size:3vh; letter-spacing:1.3vh; text-transform: uppercase; font-weight:300 } 
 section.intro .title h2 span { opacity:0; animation: moveUp .8s forwards .5s; display:block } 
 section.intro .title p { opacity:0; animation: moveRight .8s forwards .8s; } 
-section.intro .title button { opacity:0; animation: moveSmallUp .8s forwards .8s; margin-top:3rem } 
+section.intro .title button { opacity:0; animation: moveSmallUp .8s forwards .8s; margin-bottom:0 } 
 section.intro .media { z-index: 10; position: absolute; left: 2rem; bottom: 2rem; display: flex; flex-direction: column } 
 section.intro .media li { margin-top: 1rem; opacity: 0; animation: moveSmallUp 1.2s forwards; } 
 section.intro .media li:nth-child(1) { animation-delay: .5s } 
@@ -179,8 +179,8 @@ section.team ul li::before { content:'- ' }
 
 
 /* footer */
-footer { width:100%; padding:5rem 10%; box-sizing: border-box; display:flex; justify-content: space-between; color:white } 
-footer div { text-transform: uppercase; z-index: 1; } 
+footer { z-index: 1; width:100%; padding:5rem 10%; box-sizing: border-box; display:flex; justify-content: space-between; color:white } 
+footer div { text-transform: uppercase; } 
 footer .media { display:flex } 
 footer .media li { margin-left:1rem } 
 
@@ -247,7 +247,7 @@ header .logo {width:5rem; height:5rem}
  section.terms {flex-direction: column; padding:0 !important; text-align:center; width:100%}
  section.terms .title {margin-right:0}
  section.terms .terms-slider {width:100vw}
-
+ section.terms dl dt:last-of-type{padding-top:6rem}
  section.curriculum .container {overflow: hidden;}
  section.curriculum .container::before {content:none;}
  section.curriculum .container a {min-width:auto; width:100% !important; margin:0}
