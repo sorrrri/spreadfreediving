@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Spread Freediving</title>
+    <link rel="shortcut icon" href="./sources/logo.ico">
     <link rel="stylesheet" href="./sources/css/sori.css">
     <link rel="stylesheet" href="./sources/css/animate.css">
 
@@ -17,20 +18,13 @@
 </head>
 
 <body>
-    <div class="wrapper aida">
+    <canvas id="liquid"></canvas>
+    <div class="wrapper page-curriculum page-aida">
         <header>
             <a href="./index.html"><div class="logo"></div></a>
-            <ul class="menu">
-                <li class="about"><a href="">about</a></li>
-                <li class="curriculum"><a href="">curriculum</a></li>
-                <li class="schedule"><a href="">schedule</a></li>
-                <li class="promotion"><a href="">promotion</a></li>
-                <li class="gallery"><a href="">gallery</a></li>
-                <li class="contact"><a href="">contact</a></li>
-            </ul>
         </header>
 
-        <ul class="aida-menu">
+        <ul class="menu-curriculum">
             <li><a href="#aida1">aida1</a></li>
             <li><a href="#aida2">aida2</a></li>
             <li><a href="#aida3">aida3</a></li>
@@ -219,7 +213,8 @@
                 </div>
                 <div class="row">
                     <h3>사전자격 요건</h3>
-                    <p>만 16세 이상, 신체/정신적 건강 양호한 자</p>
+                    <p>만 18세 이상, 신체/정신적 건강 양호한 자</p>
+                    <p>프리다이버 (lv2) 라이센스 소지자</p>
                 </div>
                 <div class="row time">
                     <h3>교육시간 및 비용</h3>
@@ -236,11 +231,15 @@
                             <span>11:00 ~ 13:30</span>
                             <span>지식개발</span>
                             <span>강의실</span>
-                            <span>45만원</span>
+                            <span>60만원</span>
                             <span>14:00 ~ 17:00</span>
                             <span>제한수역</span>
                             <span>수영장(수심 5m)</span>
                             <span>2일차</span>
+                            <span>3시간</span>
+                            <span>개방수역</span>
+                            <span>해양 또는 K-26 잠수풀</span>
+                            <span>3일차</span>
                             <span>3시간</span>
                             <span>개방수역</span>
                             <span>해양 또는 K-26 잠수풀</span>
@@ -298,7 +297,7 @@
                 </div>
                 <div class="row">
                     <h3>자격증 발급</h3>
-                    <p>AIDA2 라이센스 발급</p>
+                    <p>AIDA3 라이센스 발급</p>
                 </div>
             </article>
         </section>
@@ -313,7 +312,8 @@
                 </div>
                 <div class="row">
                     <h3>사전자격 요건</h3>
-                    <p>만 16세 이상, 신체/정신적 건강 양호한 자</p>
+                    <p>만 18세 이상, 신체/정신적 건강 양호한 자</p>
+                    <p>프리다이버 (lv3) 라이센스 소지자</p>
                 </div>
                 <div class="row time">
                     <h3>교육시간 및 비용</h3>
@@ -330,11 +330,19 @@
                             <span>11:00 ~ 13:30</span>
                             <span>지식개발</span>
                             <span>강의실</span>
-                            <span>45만원</span>
+                            <span>70만원</span>
                             <span>14:00 ~ 17:00</span>
                             <span>제한수역</span>
                             <span>수영장(수심 5m)</span>
                             <span>2일차</span>
+                            <span>3시간</span>
+                            <span>개방수역</span>
+                            <span>해양 또는 K-26 잠수풀</span>
+                            <span>3일차</span>
+                            <span>3시간</span>
+                            <span>개방수역</span>
+                            <span>해양 또는 K-26 잠수풀</span>
+                            <span>4일차</span>
                             <span>3시간</span>
                             <span>개방수역</span>
                             <span>해양 또는 K-26 잠수풀</span>
@@ -392,7 +400,7 @@
                 </div>
                 <div class="row">
                     <h3>자격증 발급</h3>
-                    <p>AIDA2 라이센스 발급</p>
+                    <p>AIDA4 라이센스 발급</p>
                 </div>
             </article>
         </section>
@@ -405,28 +413,29 @@
         $(document).ready(function () {
     $(window).scroll(function () {
 
-        const currentScroll = $(this).scrollTop();
-        const ypos = window.pageYOffset;
+        var currentScroll = $(this).scrollTop();
+        var sectionAida1 = $("section.aida1").offset().top - 100;
+        var sectionAida2 = $("section.aida2").offset().top - 100;
+        var sectionAida3 = $("section.aida3").offset().top - 100;
+        var sectionAida4 = $("section.aida4").offset().top - 100;
 
-        if (currentScroll > $("section.aida1").offset().top - 100) {
-            $("body").css("background-color", "var(--color-navy)");
-            $(".aida-menu li").removeClass("active");
-            $(".aida-menu li:nth-child(1)").addClass("active");
+        var ypos = window.pageYOffset;
+
+        if (currentScroll > sectionAida1 && currentScroll < sectionAida2) {
+            $(".menu-curriculum li").removeClass("active");
+            $(".menu-curriculum li:nth-child(1)").addClass("active");
         }
-        if (currentScroll > $("section.aida2").offset().top - 100) {
-            $("body").css("background-color", "var(--color-bluegreen)");
-            $(".aida-menu li").removeClass("active");
-            $(".aida-menu li:nth-child(2)").addClass("active");
+        if (currentScroll > sectionAida2 && currentScroll < sectionAida3) {
+            $(".menu-curriculum li").removeClass("active");
+            $(".menu-curriculum li:nth-child(2)").addClass("active");
         }
-        if (currentScroll > $("section.aida3").offset().top - 100) {
-            $("body").css("background-color", "var(--color-blue)");
-            $(".aida-menu li").removeClass("active");
-            $(".aida-menu li:nth-child(3)").addClass("active");
+        if (currentScroll > sectionAida3 && currentScroll < sectionAida4) {
+            $(".menu-curriculum li").removeClass("active");
+            $(".menu-curriculum li:nth-child(3)").addClass("active");
         }
-        if (currentScroll > $("section.aida4").offset().top - 100) {
-            $("body").css("background-color", "var(--color-coral)");
-            $(".aida-menu li").removeClass("active");
-            $(".aida-menu li:nth-child(4)").addClass("active");
+        if (currentScroll > sectionAida4) {
+            $(".menu-curriculum li").removeClass("active");
+            $(".menu-curriculum li:nth-child(4)").addClass("active");
         }
     })
 })

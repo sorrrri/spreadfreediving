@@ -6,7 +6,7 @@ body { word-break:keep-all; overflow-x:hidden; width:100%; font: 1.8vh/1.5 'Nanu
 a { text-decoration: none; color:white } 
 ul { list-style: none; margin: 0; padding: 0 } 
 span, li { color: white } 
-button { font-size:1.2vh; white-space: nowrap; background: transparent url(../images/bg_liquid_fill.png) repeat-x 0 -100%; transition: 1.5s ease; font-family: 'Michroma', sans-serif; border:1px solid white; color:white; text-transform:uppercase; padding:1rem 2rem; display:flex; align-items:center; cursor: pointer; } 
+button { font-size:1.2vh; white-space: nowrap; background: transparent url(../images/bg_liquid_fill.png) repeat-x 0 -160%; transition: 1.5s ease; font-family: 'Michroma', sans-serif; border:1px solid white; color:white; text-transform:uppercase; padding:1rem 2rem; display:flex; align-items:center; cursor: pointer; } 
 button:hover { background-position: 500% 100%; color:#1E3F84 } 
 .wrapper { display: flex; flex-direction: column } 
 article, .container { width:80%; margin:0 auto; display:flex; position:relative } 
@@ -69,7 +69,7 @@ section.intro .title h1 span { opacity:0; animation: moveUp .8s forwards .2s; di
 section.intro .title h2 { line-height:1; margin-bottom:2rem; font-family: 'Poppins', sans-serif; font-size:3vh; letter-spacing:1.3vh; text-transform: uppercase; font-weight:300 } 
 section.intro .title h2 span { opacity:0; animation: moveUp .8s forwards .5s; display:block } 
 section.intro .title p { opacity:0; animation: moveRight .8s forwards .8s; } 
-section.intro .title button { opacity:0; animation: moveSmallUp .8s forwards .8s; margin-bottom:0 } 
+section.intro .title button { opacity:0; animation: moveSmallUp .8s forwards .8s; margin-top:2rem; margin-bottom:0 } 
 section.intro .media { z-index: 10; position: absolute; left: 2rem; bottom: 2rem; display: flex; flex-direction: column } 
 section.intro .media li { margin-top: 1rem; opacity: 0; animation: moveSmallUp 1.2s forwards; } 
 section.intro .media li:nth-child(1) { animation-delay: .5s } 
@@ -101,7 +101,7 @@ section.slick-slider img { width:100% }
 
 section[class*="scroll-text"] { font-family:'Libre Baskerville', serif; font-weight:bold; color:transparent; -webkit-text-stroke: 1px rgba(88,124,188,.6); text-transform:uppercase; white-space:nowrap; } 
 section.scroll-text { font-size:13vw; } 
-section.scroll-text-02 { font-size:10vw; margin-left:-100%} 
+section.scroll-text-02 { font-size:10vw; margin-left:-100% } 
 
 /* terms */
 section.terms { position:relative; width: 85vw; margin-left:15vw; display:flex } 
@@ -156,7 +156,7 @@ section.experience .ex-slider img { width:100% }
 section.experience ul { z-index:5; width:56vw; color:white; padding:5rem 0 5rem 15vw } 
 section.experience ul li small { color:var(--color-lavender); line-height: 2; font-weight: bold } 
 section.experience ul li p { margin:0 0 2rem } 
-section.experience ul li span { font-size:18px; font-weight: bold } 
+section.experience ul li span { font-weight: bold } 
 section.experience button { font-family: NanumSquare; padding:1.5rem 5rem; margin-top:3rem; font-size:1.8vh } 
 section.experience button ion-icon { transition: transform .2s; } 
 section.experience button:hover ion-icon { transform: translateX(10px) } 
@@ -191,73 +191,83 @@ article { margin:8rem auto 3rem; background:rgba(255,255,255,.1); padding:3rem; 
 article h1 { text-align:center; font-family:'Libre Baskerville', serif; -webkit-text-stroke: 1px rgba(255,255,255,.5); color:transparent; font-size: 10vw !important; line-height: 1.5 } 
 article .table { width:100%; margin:1rem auto; border-top:1px solid rgba(255,255,255,.5); border-bottom:1px solid rgba(255,255,255,.5); } 
 article .table .th, article .table .th span { color:var(--color-babypink) } 
-article .table .row { display:flex; border-bottom:1px solid rgba(255,255,255,.5); align-items: center; padding:1rem } 
+article .table .row { display:flex; border-bottom:1px solid rgba(255,255,255,.5); align-items: center; padding:1rem 0 } 
+article > .table > .row { padding:1rem } 
 article .table .row:last-of-type { border-bottom: 0 } 
 article .table span { flex:1 1 20% } 
 
-.aida { transition: background-color .2s } 
-.aida-menu { display:flex; margin:10rem auto 3rem; position:fixed; bottom:13rem; left:-13rem; transform:rotate(90deg) } 
-.aida-menu li { margin:0 20px; } 
-.aida-menu li.active a { color:white; -webkit-text-stroke: 0; transform: scale(1.2); display:block; transition:transform .2s } 
-.aida-menu li a { font-size:1.5rem; font-family:'Libre Baskerville', serif; font-weight:bold; color:rgba(255,255,255,.3); text-transform:uppercase; } 
+.page-curriculum { background-size:cover; background-attachment: fixed; transition: background-color .2s } 
+.page-curriculum.page-aida { background-image:url(../images/bg_turtle.jpg); } 
+.page-curriculum.page-padi { background-image:url(../images/bg_dolphines.jpg);  } 
+.page-curriculum::before { content:""; position: fixed; top:0; left:0; right:0; bottom:0; background-color:rgba(3, 23, 65, .7) } 
+.page-curriculum section:not(:first-of-type) .time .grid + .row { flex-direction: column; text-align: left; } 
 
-.aida article > .row { border-bottom:1px solid rgba(255,255,255,.3); padding:2rem 1rem; display:flex; align-items: center } 
-.aida article > .row h3 { min-width:300px } 
-.aida article > .row:first-of-type { border-top:2px solid rgba(255,255,255,.5) } 
-.aida article > .row:last-of-type { border-bottom:2px solid rgba(255,255,255,.5) } 
+.menu-curriculum { display:flex; margin:10rem auto 3rem; position:fixed; bottom:13rem; left:-11rem; transform:rotate(90deg) } 
+.menu-curriculum li { margin:0 20px; } 
+.menu-curriculum li.active a { color:white; -webkit-text-stroke: 0; transform: scale(1.2); display:block; transition:transform .2s } 
+.menu-curriculum li a { font-size:1.5rem; font-family:'Libre Baskerville', serif; font-weight:bold; color:rgba(255,255,255,.3); text-transform:uppercase; } 
 
-.aida .time { text-align: center; } 
-.aida .time .th { border-bottom:1px solid rgba(255,255,255,.5); padding:.5rem } 
-.aida .time .grid { grid-template-columns: repeat(5, 20%); } 
+.page-curriculum article > .row { border-bottom:1px solid rgba(255,255,255,.3); padding:2rem 1rem; display:flex; align-items: center } 
+.page-curriculum article > .row h3 { min-width:300px } 
+.page-curriculum article > .row:first-of-type { border-top:2px solid rgba(255,255,255,.5) } 
+.page-curriculum article > .row:last-of-type { border-bottom:2px solid rgba(255,255,255,.5) } 
 
-.aida1 .time .grid { grid-template-rows: repeat(2,60px); } 
-.aida1 .time .grid span:nth-child(5) { grid-row: span 2 } 
-.aida2 .time .grid { grid-template-rows: repeat(3,60px) } 
-.aida2 .time .grid span:nth-child(5) { grid-row: span 3 } 
-.aida2 .time .grid + .row { flex-direction: column; text-align: left; } 
-.aida2 .time small { padding:1rem 0; color:var(--color-coral); border-top:1px solid rgba(255,255,255,.5); border-bottom:1px solid rgba(255,255,255,.5); } 
+.page-curriculum .time { text-align: center; line-height:1.2; }
+.page-curriculum .time small { padding:1rem 0; color:var(--color-lavender); border-top:1px solid rgba(255,255,255,.5); border-bottom:1px solid rgba(255,255,255,.5); } 
+.page-curriculum .time .th { border-bottom:1px solid rgba(255,255,255,.5); padding:.5rem } 
+.page-curriculum .time .grid { grid-template-columns: repeat(5, 20%); } 
+
+.page-curriculum section:nth-of-type(1) .time .grid { grid-template-rows: repeat(2,70px); } 
+.page-curriculum section:nth-of-type(1) .time .grid span:nth-child(5) { grid-row: span 2 } 
+.page-curriculum section:nth-of-type(2) .time .grid { grid-template-rows: repeat(3,70px) } 
+.page-curriculum section:nth-of-type(2) .time .grid span:nth-child(1) { grid-row: span 2 } 
+.page-curriculum section:nth-of-type(2) .time .grid span:nth-child(5) { grid-row: span 3 } 
+.page-curriculum section:nth-of-type(3) .time .grid { grid-template-rows: repeat(4,70px) } 
+.page-curriculum section:nth-of-type(3) .time .grid span:nth-child(1) { grid-row: span 2 } 
+.page-curriculum section:nth-of-type(3) .time .grid span:nth-child(5) { grid-row: span 4 } 
+.page-curriculum section:nth-of-type(4) .time .grid { grid-template-rows: repeat(5,70px) } 
+.page-curriculum section:nth-of-type(4) .time .grid span:nth-child(1) { grid-row: span 2 } 
+.page-curriculum section:nth-of-type(4) .time .grid span:nth-child(5) { grid-row: span 5 } 
 
 
 
-@media screen and (max-width:490px) {
- html, body {font-size:17px}
- article, .container {width:100% !important; display:block !important}
+@media screen and (max-width:490px) { html, body { font-size:17px } 
+ article, .container { width:100% !important; display:block !important } 
  header .menu, section.intro .scroll-downs { display:none } 
- button {margin:3rem auto; font-size:17px !important}
-header {justify-content: center; padding:2rem}
-header .logo {width:5rem; height:5rem}
- h1 {margin-bottom:.5rem}
+ button { margin:2rem auto; font-size:17px !important } 
+ header { justify-content: center; padding:2rem } 
+ h1 { margin-bottom:.5rem } 
 
- section { margin:0 !important; padding:0 2rem !important} 
+ section { margin:0 !important; padding:0 1.5rem !important } 
 
  section.intro { padding:0; text-align:center; overflow:hidden } 
  section.intro .title { width:80%; top:50%; left:50%; transform:translate(-50%, -50%) } 
- section.intro .title h1 {font-size: 8vh;}
- section.intro .title h2 {font-size: 2vh}
- section.intro button{font-size:14px !important}
+ section.intro .title h1 { font-size: 8vh; } 
+ section.intro .title h2 { font-size: 2vh } 
+ section.intro button { font-size:14px !important } 
 
 
- section.about::before {font-size:7vh; }
- section.about .desc {margin:0; margin-top:-20%; padding:0}
- section.about .inner-wrap {margin:3rem 0; min-width:auto; width:100%; min-height:auto; height:36vh }
+ section.about::before { font-size:7vh; } 
+ section.about .desc { margin:0; margin-top:-20%; padding:0 } 
+ section.about .inner-wrap { margin:3rem 0; min-width:auto; width:100%; min-height:auto; height:36vh } 
 
 
- section.scroll-text-02 {margin-left:-200% !important }
+ section.scroll-text-02 { margin-left:-200% !important } 
 
- section.terms {flex-direction: column; padding:0 !important; text-align:center; width:100%}
- section.terms .title {margin-right:0}
- section.terms .terms-slider {width:100vw}
- section.terms dl dt:last-of-type{padding-top:6rem}
- section.curriculum .container {overflow: hidden;}
- section.curriculum .container::before {content:none;}
- section.curriculum .container a {min-width:auto; width:100% !important; margin:0}
- section.curriculum .container a.aida {margin-bottom:2rem}
+ section.terms { flex-direction: column; padding:0 !important; text-align:center; width:100% } 
+ section.terms .title { margin-right:0 } 
+ section.terms .terms-slider { width:100vw } 
+ section.terms dl dt:last-of-type { padding-top:6rem } 
+ section.curriculum .container { overflow: hidden; } 
+ section.curriculum .container::before { content:none; } 
+ section.curriculum .container a { min-width:auto; width:100% !important; margin:0 } 
+ section.curriculum .container a.aida { margin-bottom:2rem } 
 
- section.experience ul {width:100%; padding-left:0}
+ section.experience ul { width:100%; padding-left:0 } 
 
- section.team .container div {padding:1rem; text-align:center}
- section.team .container .kone {margin-bottom:2rem}
- section.team h2, section.team h3 {text-align:center}
+ section.team .container div { padding:1rem; text-align:center } 
+ section.team .container .kone { margin-bottom:2rem } 
+ section.team h2, section.team h3 { text-align:center } 
  }
 
 @keyframes appear { 

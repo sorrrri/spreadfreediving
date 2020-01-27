@@ -11,6 +11,12 @@ $(document).ready(function () {
 
     })
 
+    $('a[href^="#"]').click(function () {
+		var target = this.hash;
+		//console.log(target, $target);
+		$('html, body').animate({ 'scrollTop': $(target).offset().top }), 1500;
+	});
+
 })
 
 

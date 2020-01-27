@@ -53,7 +53,7 @@
                 <p>세상에 여행할 곳은 많지만 지구의 70%이상 되는 바닷속을 여행할 수 있는 사람은 많지 않습니다.</p>
                 <p>Spread Freedving에서 프리다이빙과 교육을 통하여 안전하게</p>
                 <p>바닷속을 여행할 수 있는 방법을 알려드립니다.</p>
-                <button>explore</button>
+                <a href="#about"><button>explore</button></a>
             </div>
             <ul class="media">
                 <li><a href="">
@@ -150,7 +150,7 @@
 
         <section class="scroll-text-02">spread freediving team spread freediving team</section>
 
-        <section class="curriculum">
+        <section id="curriculum" class="curriculum">
             <div class="container">
                 <a href="./aida.html" class="aida wow fadeInUp">
                     <h3>aida</h3>
@@ -188,7 +188,7 @@
                     <span>교육비용 8만원 (라이센스는 발급되지 않습니다.)</span>
                 </li>
                 <li>
-                    <button class="wow fadeInRight">교육 문의 <ion-icon name="arrow-forward"></ion-icon></button>
+                    <button onclick="window.open('https://pf.kakao.com/_jXxmYC')" class="wow fadeInRight">카카오톡 문의 <ion-icon name="arrow-forward"></ion-icon></button>
                 </li>
             </ul>
         </section>
@@ -261,7 +261,7 @@
         $('.terms-slider').slick({
             adaptiveHeight: false,
             arrows: false,
-            dots: true,
+            dots: false,
             autoplay: true,
             speed: 400,
             slidesToShow: 3,
