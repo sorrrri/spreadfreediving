@@ -1,1 +1,3 @@
 /.idea
+.publish
+package-lock.json
