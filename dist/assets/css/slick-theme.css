@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@charset 'UTF-8';
 /* Slider */
 .slick-loading .slick-list
 {
@@ -64,7 +64,7 @@
 .slick-prev:before,
 .slick-next:before
 {
-    font-family: 'slick', sans-serif;
+    font-family: 'slick';
     font-size: 20px;
     line-height: 1;
 
@@ -175,7 +175,7 @@
 }
 .slick-dots li button:before
 {
-    font-family: 'slick', sans-serif;
+    font-family: 'slick';
     font-size: 6px;
     line-height: 20px;
 
