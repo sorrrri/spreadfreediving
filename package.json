@@ -24,6 +24,7 @@
     "express": "^4.17.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
+    "gulp-gh-pages": "^0.5.4",
     "gulp-nodemon": "^2.5.0",
     "gulp-watch": "^5.0.1"
   }
