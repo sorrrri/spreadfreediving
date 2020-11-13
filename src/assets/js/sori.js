@@ -20,7 +20,6 @@ $(document).ready(function () {
 })
 
 
-
 // liquid
 ! function() {
     "use strict";
